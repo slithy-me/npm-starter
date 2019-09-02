@@ -1,5 +1,6 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 
 const htmlWebpackPlugin = new HtmlWebpackPlugin({
   template: path.join(__dirname, 'examples/src/index.html'),
@@ -8,6 +9,9 @@ const htmlWebpackPlugin = new HtmlWebpackPlugin({
 
 module.exports = {
   entry: path.join(__dirname, 'examples/src/index.js'),
+  output: {
+    path: path.resolve(__dirname, 'dist')
+  },
   module: {
     rules: [
       {
@@ -21,7 +25,10 @@ module.exports = {
       }
     ]
   },
-  plugins: [htmlWebpackPlugin],
+  plugins: [
+    htmlWebpackPlugin,
+    new CleanWebpackPlugin(),
+  ],
   resolve: {
     extensions: ['.js', '.jsx', '.css', '.scss']
   },
