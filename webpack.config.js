@@ -12,18 +12,18 @@ module.exports = {
     rules: [
       {
         test: /\.jsx?$/,
-        use: "babel-loader",
+        use: 'babel-loader',
         exclude: /node_modules/
       },
       {
-        test: /\.css$/,
-        use: ["style-loader", "css-loader"]
+        test: /\.(sa|sc|c)ss$/,
+        use: ['style-loader', 'css-loader', 'sass-loader']
       }
     ]
   },
   plugins: [htmlWebpackPlugin],
   resolve: {
-    extensions: ['.js', '.jsx']
+    extensions: ['.js', '.jsx', '.css', '.scss']
   },
   devServer: {
     port: 3001

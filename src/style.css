@@ -1,7 +1,0 @@
-/*
-  npm install --save-dev react react-dom prop-types @babel/core @babel/cli @babel/preset-env @babel/preset-react @babel/plugin-proposal-object-rest-spread babel-loader webpack webpack-cli webpack-dev-server html-webpack-plugin style-loader css-loader
-*/
-
-h1 {
-  color: red;
-}
